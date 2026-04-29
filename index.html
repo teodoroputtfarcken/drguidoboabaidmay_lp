@@ -73,7 +73,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    padding: 120px 5% 80px;
+    padding: 120px 5% 0;
     position: relative;
     overflow: hidden;
   }
@@ -93,7 +93,7 @@
     pointer-events: none;
   }
 
-  .hero-content { position: relative; z-index: 2; }
+  .hero-content { position: relative; z-index: 2; padding-bottom: 80px; }
 
   .badge-group {
     display: flex; flex-wrap: wrap; gap: 8px;
@@ -195,7 +195,7 @@
     flex-shrink: 0;
   }
 
-  /* Hero image */
+ /* Hero image */
   .hero-image-col {
     display: flex;
     justify-content: center;
@@ -203,17 +203,26 @@
     position: relative;
     z-index: 2;
     animation: fadeUp .9s .2s ease both;
+    align-self: stretch;
   }
-  .hero-img-wrap {
+ 
+   .hero-img-wrap {
     position: relative;
     width: 440px;
     max-width: 100%;
-  }
-  .hero-img-wrap img {
+    display: flex;
+    align-items: flex-end;
+   }
+    
+.hero-img-wrap img {
     width: 100%;
     display: block;
     filter: drop-shadow(0 40px 80px rgba(0,0,0,0.5));
-  }
+    object-fit: contain;
+    object-position: bottom;
+    max-height: 90vh;
+}
+ 
   .hero-float-card {
     position: absolute;
     background: rgba(255,255,255,0.1);
